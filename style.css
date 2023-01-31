@@ -1,0 +1,39 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: blueviolet;
+}
+.list{
+    position: sticky;
+    top: 0px;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 10vh;
+    background-color: white;
+    font-weight: 600;
+}
+.link{
+    position: relative;
+    padding-bottom: 7px;
+    cursor: pointer;
+}
+.link::after{
+    position: absolute;
+    bottom: 0;
+    /* bottom直译是底部，根据效果貌似是改变字幕背景的y轴 */
+    left: 0;
+    /* 背景的x轴位置 */
+    content: "";
+    width: 0%;
+    height: 3px;
+    background-color: blueviolet;
+    /* 这段代码控制link里的字词里的背景添加一个背景 */
+    transition: width 0.4s ease-out;
+}
+.link:hover.link::after{
+    width: 100%;
+    /* 这段代码赋予了字幕背景的动态显现效果，width控制着宽度的倍率 */
+}
